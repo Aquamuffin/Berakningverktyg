@@ -1,45 +1,63 @@
-//Klass som lagrar indata till beräkningsverktyget. 
+
+//Class storing data to the computaion tool. 
 
 public class Order {
     double p1;
     double p2;
     double Q;
     double Kv;
-    double D;
-
-    public Order(double p1,double p2,double Q, double Kv, double D){
+    enum Medium{
+        vatten,
+        ånga,
+        gas
+    }
+    Medium med;
+    // Constructor. Non-existing values are set to 0.
+    public Order(double p1,double p2,double Q, double Kv,  Medium type){
     this.p1 = p1;
     this.p2 = p2;
     this.Q = Q;
     this.Kv = Kv;
-    this.D = D;
+    med = type;
+
+    //Calculate potential missing values 
+    if(med == Medium.vatten){
+        if(Q == 0){
+            Q = 1.25*Kv*Math.sqrt((p2-p1)/0.996);
+        }
+    
+        if(Kv == 0){
+            Kv = Q*Math.sqrt(0.996/(p2-p1));
+        }
+    }
+    
     }
 
-    public double Getp1(){
+    public double getp1(){
         return p1;
     }
 
-    public double Getp2(){
+    public double getp2(){
         return p2;
     }
 
-    public double GetQ(){
+    public double getQ(){
         return Q;
     }
 
-    public double GetKv(){
+    public double getKv(){
         return Kv;
     }
 
-    public double GetD(){
-        return D;
+    public double getV(double D){
+        return 353*Q/(D*D);
     }
 
-    public void SetKv(double in){
+    public void getKv(double in){
         Kv = in;
     }
 
-    public void SetQ(double in){
+    public void getQ(double in){
         Q = in; 
     }
 
