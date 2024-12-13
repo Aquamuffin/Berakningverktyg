@@ -1,0 +1,20 @@
+Målbild: Rekommendation baserat på inputvariabler
+
+Finns risk att flera ventiler funkar, inte givet vilken som är bäst
+
+Vi börjar enkelt, bygegr på med fler alternativ i längden.
+
+
+Inför mötet 12-13
+
+* Demonstrera programmet
+
+* Vilka saker är fel?
+
+* Hur väljer man produkt av de som uppfyller?
+
+* Produktdatan, hur fungerar den faktiskt
+
+	* Hur ska vi ändra den så att den blir användbar?
+
+	* Vilka kategorier kommer behövas?
